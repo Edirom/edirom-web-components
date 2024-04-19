@@ -1,2 +1,2 @@
-# edirom-web-components-demonstrator
-Demonstrators for web components
+# Demonstrators for web components
+
