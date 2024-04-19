@@ -23,8 +23,8 @@
             const resizeObserver = new ResizeObserver(entries => {
                 for (let entry of entries) {
                 const {width, height} = entry.contentRect;
-                player.setAttribute('width', width+'px');
-                player.setAttribute('height', height+'px');
+                player.setAttribute('set-width', width+'px');
+                player.setAttribute('set-height', height+'px');
                 }
             });
 
@@ -34,15 +34,17 @@
             const wcAttributeSetters = document.querySelector('#wc-attribute-setters');
             const playerAttributes = player.getAttributeNames();
             playerAttributes.forEach(attribute => {
-                const setter = document.createElement('div');
-                setter.setAttribute('class', 'setter');
-                setter.innerHTML = `<span>${attribute}: </span><br/>`;
-                setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${player.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
-                wcAttributeSetters.appendChild(setter);
+                if(attribute.startsWith('set-')){
+                    const setter = document.createElement('div');
+                    setter.setAttribute('class', 'setter');
+                    setter.innerHTML = `<span>${attribute.substring(4)}: </span><br/>`;
+                    setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${player.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
+                    wcAttributeSetters.appendChild(setter);
+                }
             });
 
             //Listening to changes in the web component attributes
-            var observer = new MutationObserver(function(mutations) {
+            /*var observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
                     if (mutation.type === "attributes") {
                         const changedAttrName  = mutation.attributeName;
@@ -51,7 +53,7 @@
                     }                    
                 });
             });
-            observer.observe(player, { attributes: true });
+            observer.observe(player, { attributes: true });*/
 
         });
     </script>
@@ -80,13 +82,13 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <edirom-audio-player tracks='[
-        {"title": "To be free", "composer": "Composer 1", "work": "Own work", "src": "https://bitmidi.com/uploads/82625.mid", "type": "audio/midi"}, 
+        <edirom-audio-player set-tracks='[
         {"title": "To be free", "composer": "Composer 1", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/1/12/03may2020-tobefree.mp3", "type": "audio/mpeg"}, 
         {"title": "A Tale of Distant Lands", "composer": "Robert Schumann", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/A_Tale_of_Distant_Lands.mp3", "type": "audio/mpeg"}, 
         {"title": "Funky Souls", "composer": "Amarià", "work": "Soundcloud: Funky Souls (2019)", "src": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Amari%C3%A0_-_Funky_Souls_%282019%29.mp3", "type": "audio/mpeg"}]'
-        height="500px" width="500px" state="pause" currentTrack="0" currentTime="0.0" 
-        playSeconds="" playbackRate="1.0" mode="controls-sm"></edirom-audio-player>
+        get-tracks="" set-height="500px" get-height="" set-width="500px" get-width="" set-state="pause" get-state="" 
+        get-track="" set-track="0" get-time="" set-time="0.0" get-end="" set-end="" set-playbackrate="1.0" get-playbackrate="" 
+        set-mode="controls-sm" get-mode=""></edirom-audio-player>
 
     </div>
 </body>
