@@ -1,3 +1,6 @@
 [submodule "edirom-audio-player"]
 	path = edirom-audio-player
 	url = https://github.com/Edirom/edirom-audio-player.git
+[submodule "edirom-verovio-render"]
+	path = edirom-verovio-render
+	url = https://github.com/Edirom/edirom-verovio-render.git
