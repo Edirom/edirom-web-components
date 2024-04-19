@@ -1,0 +1,3 @@
+[submodule "edirom-audio-player"]
+	path = edirom-audio-player
+	url = https://github.com/Edirom/edirom-audio-player.git
