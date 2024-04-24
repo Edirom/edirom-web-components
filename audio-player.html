@@ -41,7 +41,7 @@
                 if(attribute.startsWith('get-')){
                     const getter = document.createElement('div');
                     getter.setAttribute('class', 'getter');
-                    getter.innerHTML = `<span>${attribute.substring(4)}: </span><br/>`;
+                    getter.innerHTML = `<span>${attribute.substring(4)}: </span>`;
                     getter.innerHTML += `<form action="javascript:;"><input type="text" readonly="readonly" name="${attribute}" id="input-${attribute}" value="${player.getAttribute(attribute)}"></form>`;
                     wcAttributeGetters.appendChild(getter);
                 }
@@ -54,7 +54,7 @@
                 if(attribute.startsWith('set-')){
                     const setter = document.createElement('div');
                     setter.setAttribute('class', 'setter');
-                    setter.innerHTML = `<span>${attribute.substring(4)}: </span><br/>`;
+                    setter.innerHTML = `<span>${attribute.substring(4)}: </span>`;
                     setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${player.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
                     wcAttributeSetters.appendChild(setter);
                 }
@@ -101,6 +101,9 @@
             font-size: 0.9em;
             font-family: Arial;
             color: #333;
+        }
+        form {
+            display: inline-block;
         }
     </style>
 </head>
