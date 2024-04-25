@@ -7,7 +7,7 @@
     
     <!-- CUSTOM: Insert script for the web component here -->
     <!-- <script src="path/to/web-component.js"></script> -->
-    <script src="edirom-audio-player/edirom-audio-player.js"></script>
+    <script src="edirom-verovio-render/verovio-renderer-component.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -120,15 +120,9 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <edirom-audio-player set-tracks='[
-        {"title": "Mercy", "composer": "Vernon Maytone", "work": "Brotheration Reggae 2015", "src": "https://pixabay.com/de/music/download/id-140277.mp3", "type": "audio/mpeg"},
-        {"title": "Walk Good", "composer": "Daddy Roy", "work": "Brotheration Records 2016", "src": "https://pixabay.com/de/music/download/id-140285.mp3", "type": "audio/mpeg"}, 
-        {"title": "To be free", "composer": "Composer 1", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/1/12/03may2020-tobefree.mp3", "type": "audio/mpeg"}, 
-        {"title": "A Tale of Distant Lands", "composer": "Robert Schumann", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/A_Tale_of_Distant_Lands.mp3", "type": "audio/mpeg"}, 
-        {"title": "Funky Souls", "composer": "Amarià", "work": "Soundcloud: Funky Souls (2019)", "src": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Amari%C3%A0_-_Funky_Souls_%282019%29.mp3", "type": "audio/mpeg"}]'
-        get-tracks="" set-height="500px" get-height="" set-width="500px" get-width="" set-state="pause" get-state="" 
-        get-track="" set-track="0" get-time="" set-time="0.0" get-end="" set-end="" set-playbackrate="1.0" get-playbackrate="" 
-        set-mode="controls-sm" get-mode=""></edirom-audio-player>
+        <verovio-api-renderer style="width: 100%; height: 100%; background-color: red;">
+           <!-- SVG content will be rendered here -->
+        </verovio-api-renderer>
 
     </div>
 </body>
