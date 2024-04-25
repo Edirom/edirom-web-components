@@ -9,3 +9,9 @@ For demonstration purposes the components are cloned into this repository as sub
 This web component implements an audio player based on the HTML5 audio facility. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](audio-player.html)
 
 Further conceptual and technical information can be found on the [submodule page of the component](edirom-audio-player/). 
+
+## Edirom Verovio Renderer
+
+This web component implements an MEI renderer based on Verovio. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](verovio-renderer.html)
+
+Further conceptual and technical information can be found on the [submodule page of the component](edirom-verovio-render/). 
