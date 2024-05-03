@@ -1,3 +1,5 @@
+![GitHub License](https://img.shields.io/github/license/Edirom/edirom-web-components-demonstrator)
+
 # Demonstrators for web components
 
 On [this page](https://edirom.github.io/edirom-web-components-demonstrator/), the web components developed in the Edirom Online Reloaded project are intended to be used in the Edirom Online, but since they are completely independent modules they can be (re-)used in other contexts and web applications as well. 
