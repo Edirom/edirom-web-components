@@ -23,8 +23,8 @@
             const resizeObserver = new ResizeObserver(entries => {
                 for (let entry of entries) {
                 const {width, height} = entry.contentRect;
-                wc.setAttribute('set-width', width+'px');
-                wc.setAttribute('set-height', height+'px');
+                wc.setAttribute('width', width+'px');
+                wc.setAttribute('height', height+'px');
                 }
             });
 
@@ -36,28 +36,23 @@
 
 
             //Creating getters for the web component attribute values
-            const wcAttributeGetters = document.querySelector('#wc-attribute-getters');
+            const textarea = document.querySelector('#wc-custom-event-listeners textarea');
             wcAttributes.forEach(attribute => {
-                if(attribute.startsWith('get-')){
-                    const getter = document.createElement('div');
-                    getter.setAttribute('class', 'getter');
-                    getter.innerHTML = `<span>${attribute.substring(4)}: </span>`;
-                    getter.innerHTML += `<form action="javascript:;"><input type="text" readonly="readonly" name="${attribute}" id="input-${attribute}" value="${wc.getAttribute(attribute)}"></form>`;
-                    wcAttributeGetters.appendChild(getter);
-                }
+                wc.addEventListener('communicate-'+attribute+'-update', (e) => {
+                    textarea.textContent += 'Event "communicate-'+attribute+'-update"; '+attribute+'="'+e.detail[attribute]+'"\n';
+                    textarea.scrollTop = textarea.scrollHeight;
+                });
             });
 
 
             //Creating setters for the web component attribute values
             const wcAttributeSetters = document.querySelector('#wc-attribute-setters');
             wcAttributes.forEach(attribute => {
-                if(attribute.startsWith('set-')){
-                    const setter = document.createElement('div');
-                    setter.setAttribute('class', 'setter');
-                    setter.innerHTML = `<span>${attribute.substring(4)}: </span>`;
-                    setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${wc.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
-                    wcAttributeSetters.appendChild(setter);
-                }
+                const setter = document.createElement('div');
+                setter.setAttribute('class', 'setter');
+                setter.innerHTML = `<span>${attribute}: </span>`;
+                setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${wc.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
+                wcAttributeSetters.appendChild(setter);                
             });
 
             //Listening to changes in the web component attributes
@@ -68,9 +63,9 @@
                         const newValue = mutation.target.getAttribute(changedAttrName);
 
                         // only for attributes which start with 'get-' to avoid interference with setters
-                        if(changedAttrName.startsWith('get-')){
+                        /*if(changedAttrName.startsWith('get-')){
                             document.getElementById('input-'+changedAttrName).value = newValue;
-                        }
+                        }*/
                     }                    
                 });
             });
@@ -90,7 +85,7 @@
             resize: both;
             overflow: auto;
         }
-        #wc-attribute-setters, #wc-attribute-getters {
+        #wc-attribute-setters, #wc-custom-event-listeners {
             max-width: 90%;
         }
         .setter, .getter {
@@ -109,8 +104,10 @@
     </style>
 </head>
 <body>
-    <h2>Web Component Attribute Getters</h2>
-    <div id="wc-attribute-getters"></div>
+    <h2>Web Component Event Listeners</h2>
+    <div id="wc-custom-event-listeners">
+        <textarea rows="4" cols="50" readonly></textarea>
+    </div>
 
     <h2>Web Component Attribute Setters</h2>
     <div id="wc-attribute-setters"></div>
@@ -120,15 +117,13 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <edirom-audio-player set-tracks='[
+        <edirom-audio-player tracks='[
         {"title": "Mercy", "composer": "Vernon Maytone", "work": "Brotheration Reggae 2015", "src": "https://pixabay.com/de/music/download/id-140277.mp3", "type": "audio/mpeg"},
         {"title": "Walk Good", "composer": "Daddy Roy", "work": "Brotheration Records 2016", "src": "https://pixabay.com/de/music/download/id-140285.mp3", "type": "audio/mpeg"}, 
         {"title": "To be free", "composer": "Composer 1", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/1/12/03may2020-tobefree.mp3", "type": "audio/mpeg"}, 
         {"title": "A Tale of Distant Lands", "composer": "Robert Schumann", "work": "Own work", "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/A_Tale_of_Distant_Lands.mp3", "type": "audio/mpeg"}, 
         {"title": "Funky Souls", "composer": "Amarià", "work": "Soundcloud: Funky Souls (2019)", "src": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Amari%C3%A0_-_Funky_Souls_%282019%29.mp3", "type": "audio/mpeg"}]'
-        get-tracks="" set-height="500px" get-height="" set-width="500px" get-width="" set-state="pause" get-state="" 
-        get-track="" set-track="0" get-time="" set-time="0.0" get-end="" set-end="" set-playbackrate="1.0" get-playbackrate="" 
-        set-mode="controls-sm" get-mode=""></edirom-audio-player>
+        height="500px" width="500px" state="pause" track="0" time="0.0" end="" playbackrate="1.0" mode="controls-sm"></edirom-audio-player>
 
     </div>
 </body>
