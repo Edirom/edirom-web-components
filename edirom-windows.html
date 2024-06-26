@@ -7,7 +7,7 @@
     
     <!-- CUSTOM: Insert script for the web component here -->
     <!-- <script src="path/to/web-component.js"></script> -->
-    <script src="edirom-audio-player/edirom-window.js"></script>
+    <script src="edirom-window/edirom-windows.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -101,7 +101,7 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <edirom-windows windows='[{title: "Set innerHTML", html: "Lorem Ipsum"}]'></edirom-windows>
+        <edirom-windows set='[{"title": "First", "html": "Lorem Ipsum"}, {"title": "Second", "html": "Another window"}]' add='' remove=''></edirom-windows>
 
     </div>
 </body>
