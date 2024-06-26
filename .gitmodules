@@ -4,3 +4,6 @@
 [submodule "edirom-verovio-render"]
 	path = edirom-verovio-render
 	url = https://github.com/Edirom/edirom-verovio-render.git
+[submodule "edirom-window"]
+	path = edirom-window
+	url = https://github.com/Edirom/edirom-window.git
