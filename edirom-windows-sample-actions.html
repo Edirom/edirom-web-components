@@ -8,6 +8,7 @@
     <!-- CUSTOM: Insert script for the web component here -->
     <!-- <script src="path/to/web-component.js"></script> -->
     <script src="edirom-window/edirom-windows.js"></script>
+    <script src="edirom-audio-player/edirom-audio-player.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -56,6 +57,19 @@
 
 
         });
+
+        class windows {
+            static add(windowsJSON) {
+                document.querySelector('edirom-windows').setAttribute('add', JSON.stringify(windowsJSON));
+            }
+            static set(windowsJSON) {
+                document.querySelector('edirom-windows').setAttribute('set', JSON.stringify(windowsJSON));
+            }
+        }
+
+        const audioPlayerWindowJSON_1 = [{"html":"<edirom-audio-player tracks=\'[{&quot;title&quot;: &quot;To be free&quot;, &quot;composer&quot;: &quot;Composer 1&quot;, &quot;work&quot;: &quot;Own work&quot;, &quot;src&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/1/12/03may2020-tobefree.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;}]\' track=\'0\' state=\'pause\' start=\'0.0\' end=\'\' playbackrate=\'1.0\' playbackmode=\'repeat\' displaymode=\'controls-lg\'></edirom-audio-player>"}];
+        const audioPlayerWindowJSON_2 = [{"html":"<edirom-audio-player tracks='[ {&quot;title&quot;: &quot;Mercy&quot;, &quot;composer&quot;: &quot;Vernon Maytone&quot;, &quot;work&quot;: &quot;Brotheration Reggae 2015&quot;, &quot;src&quot;: &quot;https://pixabay.com/de/music/download/id-140277.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;}, {&quot;title&quot;: &quot;Walk Good&quot;, &quot;composer&quot;: &quot;Daddy Roy&quot;, &quot;work&quot;: &quot;Brotheration Records 2016&quot;, &quot;src&quot;: &quot;https://pixabay.com/de/music/download/id-140285.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;},  {&quot;title&quot;: &quot;To be free&quot;, &quot;composer&quot;: &quot;Composer 1&quot;, &quot;work&quot;: &quot;Own work&quot;, &quot;src&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/1/12/03may2020-tobefree.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;}, {&quot;title&quot;: &quot;A Tale of Distant Lands&quot;, &quot;composer&quot;: &quot;Robert Schumann&quot;, &quot;work&quot;: &quot;Own work&quot;, &quot;src&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/e/ec/A_Tale_of_Distant_Lands.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;},  {&quot;title&quot;: &quot;Funky Souls&quot;, &quot;composer&quot;: &quot;Amarià&quot;, &quot;work&quot;: &quot;Soundcloud: Funky Souls (2019)&quot;, &quot;src&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/2/2e/Amari%C3%A0_-_Funky_Souls_%282019%29.mp3&quot;, &quot;type&quot;: &quot;audio/mpeg&quot;}]' height='500px' width='500px' state='pause' track='0' start='0.0' end='' playbackrate='1.0' playbackmode='repeat' displaymode='controls-lg'></edirom-audio-player>"}];
+
     </script>
     <style>
         h2 {
@@ -93,7 +107,9 @@
     <button onclick="document.querySelector('edirom-windows').setAttribute('add', '[{&quot;title&quot;: &quot;Window 1&quot;, &quot;html&quot;: &quot;First new window&quot;}, {&quot;title&quot;: &quot;Window 2&quot;, &quot;html&quot;: &quot;Second new window&quot;}]')">Add two windows</button>
     <button onclick="document.querySelector('edirom-windows').setAttribute('add', '[{&quot;title&quot;: &quot;Klarinettenquintett&quot;, &quot;url&quot;: &quot;https://klarinettenquintett.weber-gesamtausgabe.de/index.html&quot;}]')">Add window with URL</button>
     <button onclick="document.querySelector('edirom-windows').setAttribute('add', '[{&quot;url&quot;: &quot;https://www.reger-werkausgabe.de/&quot;}, {&quot;url&quot;: &quot;https://edition.freischuetz-digital.de/&quot;, &quot;x&quot;: &quot;200px&quot;, &quot;y&quot;: &quot;100px&quot;}, {&quot;url&quot;: &quot;https://klarinettenquintett.weber-gesamtausgabe.de/index.html&quot;, &quot;x&quot;: &quot;400px&quot;, &quot;y&quot;: &quot;200px&quot;}]')">Add three Ediroms</button>
-    <button onclick="document.querySelector('edirom-windows').setAttribute('set', '[]')">Reset</button>
+    <button onclick="windows.add(audioPlayerWindowJSON_1)">Add edirom audio player (one track)</button>
+    <button onclick="windows.add(audioPlayerWindowJSON_2)">Add edirom audio player (five tracks)</button>
+    <button onclick="windows.set([])">Reset</button>
     
     <hr/>
     
@@ -101,7 +117,7 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <edirom-windows set='' add='' remove=''></edirom-windows>
+        <edirom-windows set="" add="" remove="" update="" arrange=""></edirom-windows>
 
     </div>
 </body>
