@@ -17,3 +17,15 @@ Further conceptual and technical information can be found on the [submodule page
 This web component implements an MEI renderer based on Verovio. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/verovio-renderer.html)
 
 Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-verovio-render/). 
+
+
+## Edirom Windows
+
+This web component displays and creates new windows using the [winbox library](https://nextapps-de.github.io/winbox/). It can be tested here, external interaction with the component is demonstrated by different methods:
+* navigation menu opens new windows: [navigation demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-navigation.html)
+* buttons with sample actions: [sample actions demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-windows-sample-actions.html)
+
+Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-window/). 
+
+
+
