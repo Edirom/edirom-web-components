@@ -21,7 +21,9 @@ Further conceptual and technical information can be found on the [submodule page
 
 ## Edirom Windows
 
-This web component display and create new window using [winbox library](https://nextapps-de.github.io/winbox/). It can be tested here, external interaction with the component is demonstrated by navigation menus: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-navigation.html)
+This web component displays and creates new windows using the [winbox library](https://nextapps-de.github.io/winbox/). It can be tested here, external interaction with the component is demonstrated by different methods:
+* navigation menu opens new windows: [navigation demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-navigation.html)
+* buttons with sample actions: [sample actions demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-windows-sample-actions.html)
 
 Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-window/). 
 
