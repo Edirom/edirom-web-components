@@ -47,7 +47,7 @@ class EdiromToolbar extends HTMLElement{
             </ul>
             <p> Edition</p>
             <ul>
-            <li id="ne">New Edition</li> 
+            <li id="ve">Verovio</li> 
             </ul>
             </div>
         </body>
@@ -77,9 +77,9 @@ class EdiromToolbar extends HTMLElement{
             this.shadowRoot.getElementById("fe").addEventListener('click', () => {
                 this.createWindow('[{"title": "First Edition", "html": "This is read first edition"}]');
             });   
-            this.shadowRoot.getElementById("ne").addEventListener('click', () => {
-                this.createWindow('[{"title": "New Edition", "html": "This is new edition"}]');
-            });   
+            this.shadowRoot.getElementById("ve").addEventListener('click', () => {
+                this.createWindow('[{"title": "Verovio", "html": "<verovio-api-renderer></verovio-api-renderer>"}]');
+            });
         }
 
 }
