@@ -43,7 +43,7 @@ class EdiromToolbar extends HTMLElement{
             <p>Sources</p>
             <ul>
             <li id="aut">Autograph</li>
-            <li id="fe"> First edition</li>
+            <li id="fe">Image from URL</li>
             </ul>
             <p> Edition</p>
             <ul>
@@ -79,7 +79,7 @@ class EdiromToolbar extends HTMLElement{
                 this.createWindow('[{"title": "Autograph", "html": "This is read autograph"}]');
             });
             this.shadowRoot.getElementById("fe").addEventListener('click', () => {
-                this.createWindow('[{"title": "First Edition", "html": "This is read first edition"}]');
+                this.createWindow('[{"title": "Image from URL", "url": "https://klarinettenquintett.weber-gesamtausgabe.de/Scaler/IIIF/Erstdruck2!34_ED-st_II_002_Cl(B)_2r/full/666,/0/default.jpg"}]');
             });
             this.shadowRoot.getElementById("ve").addEventListener('click', () => {
                 this.createWindow('[{"title": "Verovio", "html": "<verovio-api-renderer></verovio-api-renderer>"}]');
