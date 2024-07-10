@@ -42,7 +42,7 @@ class EdiromToolbar extends HTMLElement{
             </ul>
             <p>Sources</p>
             <ul>
-            <li id="aut">Autograph</li>
+            <li id="osd">Open Sea Dragon</li>
             <li id="fe">Image from URL</li>
             </ul>
             <p> Edition</p>
@@ -75,8 +75,8 @@ class EdiromToolbar extends HTMLElement{
             this.shadowRoot.getElementById("cri").addEventListener('click', () => {
                 this.createWindow('[{"title": "Critical Remarks", "html": "This is remarks"}]');
             });
-            this.shadowRoot.getElementById("aut").addEventListener('click', () => {
-                this.createWindow('[{"title": "Autograph", "html": "This is read autograph"}]');
+            this.shadowRoot.getElementById("osd").addEventListener('click', () => {
+                this.createWindow('[{"title": "Open SeaDragon", "html": "<edirom-openseadragon></edirom-openseadragon>"}]');
             });
             this.shadowRoot.getElementById("fe").addEventListener('click', () => {
                 this.createWindow('[{"title": "Image from URL", "url": "https://klarinettenquintett.weber-gesamtausgabe.de/Scaler/IIIF/Erstdruck2!34_ED-st_II_002_Cl(B)_2r/full/666,/0/default.jpg"}]');
