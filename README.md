@@ -8,7 +8,7 @@ For demonstration purposes the components are cloned into this repository as sub
  
 ## Edirom Audio Player
 
-This web component implements an audio player based on the HTML5 audio facility. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/audio-player.html)
+This web component implements an audio player based on the HTML5 audio facility. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-audio-player.html)
 
 Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-audio-player/). 
 
