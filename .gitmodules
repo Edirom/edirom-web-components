@@ -7,3 +7,6 @@
 [submodule "edirom-verovio-renderer"]
 	path = edirom-verovio-renderer
 	url = https://github.com/Edirom/edirom-verovio-renderer.git
+[submodule "edirom-openseadragon"]
+	path = edirom-openseadragon
+	url = https://github.com/Edirom/edirom-openseadragon.git
