@@ -16,7 +16,7 @@ Further conceptual and technical information can be found on the [submodule page
 
 This web component implements an MEI renderer based on Verovio. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/verovio-renderer.html)
 
-Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-verovio-render/). 
+Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-verovio-renderer/). 
 
 
 ## Edirom Windows
