@@ -84,7 +84,7 @@ class EdiromToolbar extends HTMLElement{
             this.createWindow('[{"title": "Image from URL", "url": "https://klarinettenquintett.weber-gesamtausgabe.de/Scaler/IIIF/Erstdruck2!34_ED-st_II_002_Cl(B)_2r/full/666,/0/default.jpg"}]');
             });
             this.shadowRoot.getElementById("ve").addEventListener('click', () => {
-                const verovioConfig = "<verovio-api-renderer   width='200' zoom='20' height='300'  pagenumber='3'  meiurl='https://www.verovio.org/examples/downloads/Schubert_Lindenbaum.mei'></verovio-api-renderer>";
+                const verovioConfig = "<edirom-verovio-renderer   width='200' zoom='20' height='300'  pagenumber='3'  meiurl='https://www.verovio.org/examples/downloads/Schubert_Lindenbaum.mei'></edirom-verovio-renderer>";
                 this.createWindow('[{"title": "Verovio", "html": "'+verovioConfig+'"}]');
             });
             this.shadowRoot.getElementById("ap").addEventListener('click', () => {
