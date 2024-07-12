@@ -76,8 +76,8 @@ class EdiromToolbar extends HTMLElement{
                 this.createWindow('[{"title": "Critical Remarks", "html": "This is remarks"}]');
             });
             this.shadowRoot.getElementById("osd").addEventListener('click', () => {
-                const osdConfig = " <edirom-openseadragon  preserveViewport='true' visibilityRatio='1' minZoomLevel='1' maxZoomLevel='1' showNavigationControl='false' sequenceMode='true'></edirom-openseadragon>";
-                this.createWindow('[{"title": "Edirom Audio Player", "html":"'+osdConfig+'"}]');
+                const osdConfig = "<edirom-openseadragon preserveviewport='true' visibilityratio='1' minzoomLevel='1' maxzoomLevel='1' showNavigationcontrol='false' sequencemode='true' tileSources='[&quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000001.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000002.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000003.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000004.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000005.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000006.jp2/info.json&quot;, &quot;https://libimages1.princeton.edu/loris/pudl0001%2F4609321%2Fs42%2F00000007.jp2/info.json&quot;]'></edirom-openseadragon>";
+                this.createWindow(`[{"title": "Edirom Openseaddragon", "html":"${osdConfig}"}]`);
             });
 
             this.shadowRoot.getElementById("fe").addEventListener('click', () => {
