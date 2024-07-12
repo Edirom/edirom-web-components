@@ -76,7 +76,7 @@ class EdiromToolbar extends HTMLElement{
                 this.createWindow('[{"title": "Critical Remarks", "html": "This is remarks"}]');
             });
             this.shadowRoot.getElementById("osd").addEventListener('click', () => {
-                const osdConfig = " <edirom-openseadragon  preserveViewport='true' visibilityRatio='1' minZoomLevel='1' maxZoomLevel='1' showNavigationControl='false' sequenceMode='true'></edirom-openseadragon>";
+                const osdConfig = " <edirom-openseadragon  preserveviewport='true' visibilityratio='1' minzoomlevel='1' maxzoomlevel='1' shownavigationcontrol='false' sequencemode='true'></edirom-openseadragon>";
                 this.createWindow('[{"title": "Edirom Audio Player", "html":"'+osdConfig+'"}]');
             });
 
