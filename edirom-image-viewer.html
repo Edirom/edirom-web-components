@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component Tester</title>
+    
+    <!-- CUSTOM: Insert script for the web component here -->
+    <!-- <script src="path/to/web-component.js"></script> -->
+    <script src="edirom-image-viewer/edirom-image-viewer.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+            //Getting the web component name
+            const webComponentName = document.querySelector('#web-component-container').firstElementChild.tagName.toLowerCase();
+            
+            
+            //Resizing the web component
+            const container = document.querySelector('#web-component-container');
+            const wc = document.getElementsByTagName(webComponentName)[0];
+
+            const resizeObserver = new ResizeObserver(entries => {
+                for (let entry of entries) {
+                const {width, height} = entry.contentRect;
+                wc.setAttribute('width', width+'px');
+                wc.setAttribute('height', height+'px');
+                }
+            });
+
+            resizeObserver.observe(container);
+
+
+            // get HTML targets
+            const textarea = document.querySelector('#wc-custom-event-listeners textarea');
+            const wcAttributeSetters = document.querySelector('#wc-attribute-setters');
+
+            
+            // listen to event changes and provide setters for attributes of web component 
+            wc.getAttributeNames().forEach(attribute => {
+
+                // Adding event listeners for changes in the web component
+                wc.addEventListener('communicate-'+attribute+'-update', (e) => {
+                    textarea.textContent += 'Event "communicate-'+attribute+'-update"; '+attribute+'="'+e.detail[attribute]+'"\n';
+                    textarea.scrollTop = textarea.scrollHeight;
+                });
+
+                // Creating setters for the web component attribute values
+                const setter = document.createElement('div');
+                setter.setAttribute('class', 'setter');
+                setter.innerHTML = `<span>${attribute}: </span>`;
+                setter.innerHTML += `<form action="javascript:document.querySelector('${webComponentName}').setAttribute('${attribute}', document.getElementById('input-${attribute}').value);"><input type="text" name="${attribute}" id="input-${attribute}" value="${wc.getAttribute(attribute)}"><input type="submit" value="Set"></form>`;
+                wcAttributeSetters.appendChild(setter);
+
+            });
+
+
+        });
+    </script>
+    <style>
+        h2 {
+            font-size: 1em;
+        }
+        #web-component-container {
+            height: 500px;
+            width: 500px;
+            border: 2px dashed #e0e0e0;
+            resize: both;
+            overflow: auto;
+        }
+        #wc-attribute-setters, #wc-custom-event-listeners {
+            max-width: 90%;
+        }
+        .setter {
+            display: inline-block;
+            margin: 0 20px 20px 0;
+        }
+        
+        .setter span {
+            font-size: 0.9em;
+            font-family: Arial;
+            color: #333;
+        }
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Web Component Event Listeners</h2>
+    <div id="wc-custom-event-listeners">
+        <textarea rows="4" cols="50" readonly></textarea>
+    </div>
+
+    <h2>Web Component Attribute Setters</h2>
+    <div id="wc-attribute-setters"></div>
+
+    <hr/>
+    
+    <div id="web-component-container">
+        
+        <!-- CUSTOM: Insert custom element for the web component here -->
+        <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
+        <edirom-openseadragon preserveviewport='true'
+            visibilityratio='1'
+            minzoomLevel='1'
+            maxzoomLevel='1'
+            showNavigationcontrol='false'
+            sequencemode='true'
+            tileSources='["https://content.staatsbibliothek-berlin.de/dc/69007087X-0001/info.json", "https://content.staatsbibliothek-berlin.de/dc/69007087X-0002/info.json"]'></edirom-openseadragon>
+
+    </div>
+</body>
+</html>
