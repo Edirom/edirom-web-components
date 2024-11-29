@@ -19,3 +19,6 @@
 [submodule "edirom-web-socket-connector"]
 	path = edirom-web-socket-connector
 	url = https://github.com/Edirom/edirom-web-socket-connector
+[submodule "edirom-web-component-demo"]
+	path = edirom-web-component-demo
+	url = https://github.com/Edirom/edirom-web-component-demo.git
