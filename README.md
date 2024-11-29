@@ -21,7 +21,7 @@ Further conceptual and technical information can be found on the [submodule page
 
 ## Edirom Image Viewer
 
-This web component displays IIIF tile sources using openseadragon library. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://github.com/Edirom/edirom-image-viewer)
+This web component displays IIIF tile sources using openseadragon library. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components-demonstrator/edirom-image-viewer.html)
 
 Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components-demonstrator/edirom-image-viewer/). 
 
