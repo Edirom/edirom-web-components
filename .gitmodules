@@ -10,3 +10,12 @@
 [submodule "edirom-image-viewer"]
 	path = edirom-image-viewer
 	url = https://github.com/Edirom/edirom-image-viewer.git
+[submodule "edirom-video-player"]
+	path = edirom-video-player
+	url = https://github.com/Edirom/edirom-video-player.git
+[submodule "edirom-concordance-navigator"]
+	path = edirom-concordance-navigator
+	url = https://github.com/Edirom/edirom-concordance-navigator
+[submodule "edirom-web-socket-connector"]
+	path = edirom-web-socket-connector
+	url = https://github.com/Edirom/edirom-web-socket-connector
