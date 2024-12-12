@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component Tester</title>
+    
+    <!-- script for demo container web component -->
+    <script src="../edirom-web-component-demo/edirom-web-component-demo.js"></script>
+
+    <!-- CUSTOM: Insert script for the web component here -->
+    <!-- <script src="path/to/web-component.js"></script> -->
+    <script src="../edirom-video-player/videoplayer.js"></script>
+
+</head>
+<body>
+    
+    <edirom-web-component-demo>
+        <!-- CUSTOM: Insert custom element for the web component here -->
+        <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
+        <edirom-videoplayer
+        src-data="https://upload.wikimedia.org/wikipedia/commons/9/96/So_entsteht_Musik.webm"
+        src-endpoint=""
+        target-time="0.0"
+        state="pause"
+        maxsize=""
+        measures-data="[{id: 'm1', begin: 0.0, end: 2.0}, {id: 'm2', begin: 2.0, end: 4.0}]"
+        measures-endpoint=""
+        target-measure="m1"
+        ></edirom-videoplayer>
+    </edirom-web-component-demo>
+
+</body>
+</html>
