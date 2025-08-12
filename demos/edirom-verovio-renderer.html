@@ -10,7 +10,7 @@
     
     <!-- CUSTOM: Insert script for the web component here -->
     <!-- <script src="path/to/web-component.js"></script> -->
-    <script src="../edirom-verovio-renderer/verovio-renderer-component.js"></script>
+    <script src="../edirom-verovio-renderer/edirom-verovio-renderer-component.js"></script>
 
 </head>
 <body>
@@ -19,11 +19,30 @@
         
         <!-- CUSTOM: Insert custom element for the web component here -->
         <!-- <web-component-custom-element attribute1="value1" attribute2="value2"></web-component-custom-element> -->
-        <verovio-api-renderer>
-           <!-- SVG content will be rendered here -->
-        </verovio-api-renderer>
+        <edirom-verovio-renderer
+            meiurl="https://editor.verovio.org/examples/puccini.mei"
+            pagenumber="1"
+            elementid=""
+            measurenumber=""
+            mdivname=""
+            movementid=""
+            zoom="20"
+            height="500px"
+            width="500px"
+            pagewidth=""
+            pageheight=""
+            verovio-url="https://www.verovio.org/javascript/5.3.2/verovio-toolkit-wasm.js"
+            verovio-options="{
+                breaks: 'auto',
+                scale: 20,
+                spacingStaff: 7,
+                pageHeight: 4500,
+                pageWidth: 4500,
+                footer: 'none',
+                header: 'none'
+            }"
+        ></edirom-verovio-renderer>
 
-    
     </edirom-web-component-demo>
 
 </body>
