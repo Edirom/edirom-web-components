@@ -22,3 +22,6 @@
 [submodule "edirom-web-component-demo"]
 	path = edirom-web-component-demo
 	url = https://github.com/Edirom/edirom-web-component-demo.git
+[submodule "edirom-core-web-components"]
+	path = edirom-core-web-components
+	url = https://github.com/Edirom/edirom-core-web-components.git
