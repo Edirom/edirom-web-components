@@ -16,7 +16,7 @@
             height: 100%;
             margin-left: 20px;
         }
-        edirom-openseadragon {
+        edirom-image-viewer {
             display: block;
             width: 100%;
             height: 600px;
@@ -33,29 +33,59 @@
 </head>
 <body>
 
-<body>
-
     <edirom-web-component-demo>
-        <edirom-openseadragon 
+        <!--
+            edirom-image-viewer attributes
+            ------------------------------
+            core state:        pagenumber, zoom, rotation, preserveviewport, minzoomlevel, maxzoomlevel
+            triggers:          triggerhome, triggerfullscreen
+            controls:          clicktozoom, sequencemode, shownavigationcontrol, shownavigator,
+                               showzoomcontrol, showhomecontrol, showfullpagecontrol, showsequencecontrol
+            view mode:         view-mode ('pageBasedView' | 'measureBasedView')
+            zones:             zones-data (lookup map) + zone (key to jump to)
+            measures:          measures-data (lookup map) + measure (key to jump to)
+            movements:         mdivs-data (lookup map) + mdiv (key to jump to)
+            annotations:       annotations-data + show-annotations + visible-categories + visible-priorities
+            measure numbers:   measure-numbers-data + show-measure-numbers
+            fit to region:     fitrect ("x,y,width,height" in image pixels)
+            tile sources:      tilesources (IIIF info.json URLs)
+        -->
+        <edirom-image-viewer 
             id="viewer"
             pagenumber="1"
             zoom="1"
             rotation="0"
+            preserveviewport="false"
+            minzoomlevel="0.5"
+            maxzoomlevel="10"
             triggerhome="false"
             triggerfullscreen="false"
-            shownavigationcontrol="true"
-            sequencemode="true"
             clicktozoom="false" 
+            sequencemode="true"
+            shownavigationcontrol="true"
             shownavigator="true" 
             showzoomcontrol="true" 
             showhomecontrol="true" 
             showfullpagecontrol="true" 
             showsequencecontrol="true"
             openseadragon-options=""
+            view-mode="pageBasedView"
+            zones-data='{"zone1":{"name":"Zone 1","page":1,"ulx":500,"uly":500,"lrx":1500,"lry":1200},"zone2":{"name":"Zone 2","page":2,"ulx":800,"uly":300,"lrx":1800,"lry":1000}}'
+            zone=""
+            measures-data='{"1":{"page":1,"ulx":500,"uly":500,"lrx":900,"lry":1200},"2":{"page":1,"ulx":900,"uly":500,"lrx":1300,"lry":1200}}'
+            measure=""
+            mdivs-data='{"mdiv1":{"page":1},"mdiv2":{"page":2}}'
+            mdiv=""
+            annotations-data='[{"id":"annot1","idPrefix":"anno","title":"Example annotation","uri":"","categories":"editorialAnnotation","priority":"medium","fn":"","tooltip":"<p>Example annotation tooltip</p>","plist":[{"id":"m1","ulx":500,"uly":500,"lrx":900,"lry":1200,"type":""}]}]'
+            show-annotations="false"
+            visible-categories=""
+            visible-priorities=""
+            measure-numbers-data='[{"id":"m1","idPrefix":"mn","name":"1","ulx":500,"uly":460,"lrx":560,"lry":520},{"id":"m2","idPrefix":"mn","name":"2","ulx":900,"uly":460,"lrx":960,"lry":520}]'
+            show-measure-numbers="false"
+            fitrect=""
             tilesources='["https://content.staatsbibliothek-berlin.de/dc/69007087X-0001/info.json", "https://content.staatsbibliothek-berlin.de/dc/69007087X-0002/info.json"]'>
-        </edirom-openseadragon>
+        </edirom-image-viewer>
     </edirom-web-component-demo>
 
-</body>
 </body>
 </html>
