@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component Tester</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        edirom-web-component-demo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin-left: 20px;
+        }
+        edirom-3d-viewer {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <!-- script for demo container web component -->
+    <script src="../edirom-web-component-demo/edirom-web-component-demo.js"></script>
+
+    <!-- CUSTOM: Insert script for the web component here -->
+    <script src="../edirom-3d-viewer/edirom-3d-viewer.js"></script>
+
+</head>
+<body>
+
+    <edirom-web-component-demo>
+        <!--
+            edirom-3d-viewer attributes
+            ---------------------------
+            src:        URL of the X3D file to render (changing it loads the new scene)
+            x-ite-url:  URL of the X_ITE ES module (only effective before attach;
+                        defaults to a pinned CDN version)
+
+            Sizing is pure CSS: the element fills its container.
+
+            Sample data: the default scene lives in demos/sample-data/edirom-3d-viewer/ (the
+            component repo itself ships no samples). More scenes are available
+            in the TaMudi edition data repository:
+            https://git.uni-paderborn.de/tanzmusikdigital/edition/edition-data/-/tree/main/content/movengine-files
+            Download one and point src at it, or paste any reachable X3D URL
+            into the src setter.
+        -->
+        <edirom-3d-viewer
+            id="viewer"
+            src="sample-data/edirom-3d-viewer/p1-actors-all_opt.x3d">
+        </edirom-3d-viewer>
+    </edirom-web-component-demo>
+
+</body>
+</html>
