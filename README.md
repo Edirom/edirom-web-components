@@ -19,6 +19,12 @@ This web component implements an MEI renderer based on Verovio. It can be tested
 Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components/edirom-verovio-renderer/). 
 
 
+## Edirom 3D Viewer
+
+This web component renders 3D scenes (primarily X3D) using the [X_ITE](https://create3000.github.io/x_ite/) library. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components/demos/edirom-3d-viewer.html)
+
+Further conceptual and technical information can be found on the [submodule page of the component](https://edirom.github.io/edirom-web-components/edirom-3d-viewer/).
+
 ## Edirom Image Viewer
 
 This web component displays IIIF tile sources using openseadragon library. It can be tested here, external interaction with the component is demonstrated by HTML forms: [demo page](https://edirom.github.io/edirom-web-components/demos/edirom-image-viewer.html)

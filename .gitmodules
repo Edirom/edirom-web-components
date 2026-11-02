@@ -26,3 +26,6 @@
 [submodule "edirom-core-web-components"]
 	path = edirom-core-web-components
 	url = https://github.com/Edirom/edirom-core-web-components.git
+[submodule "edirom-3d-viewer"]
+	path = edirom-3d-viewer
+	url = https://github.com/Edirom/edirom-3d-viewer
